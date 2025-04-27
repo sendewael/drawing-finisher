@@ -4,7 +4,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?logo=PyTorch&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?logo=python&logoColor=ffdd54)
 
-An AI model that completes partial drawings by predicting the next points in a sequence. Developed as a proof-of-concept by Sen Dewael and Marnick Michielsen from Thomas More University (Geel, Belgium) in collaboration with KMITL (Bangkok, Thailand).
+An AI model that completes partial drawings by predicting the next points in a sequence. Developed as a proof-of-concept by Sen Dewael and Marnick Michielsen from Thomas More University (Geel, Belgium) in collaboration with KMITL (Bangkok, Thailand). Keep in mind that this AI model is POC which means that the featues are not perfectly worked out and the AI model needs work to create perfect predictions.
 
 ## Features ✨
 
