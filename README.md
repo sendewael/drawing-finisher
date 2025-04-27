@@ -42,6 +42,9 @@ Navigate to the drawings folder and run:
 
 ### Training the Model
 
+Training script:
+- `train.py`
+
 Execute the training script which will:
 - Load and preprocess the drawing data
 - Train the LSTM model
@@ -50,12 +53,18 @@ Execute the training script which will:
 
 ### Making Predictions
 
+Prediction script:
+- `predict.py --input <filename> --steps <number of points to predict> --output <output_filename>`
+
 Use the prediction script with:
 - An input JSON file containing partial drawing
 - Number of points to predict
 - Output file name for completed drawing
 
 ### Visualizing Results
+
+Visualizing script:
+- `visualize_drawing.py <filename>`
 
 The visualization tool can display:
 - Original partial drawings
