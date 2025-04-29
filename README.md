@@ -4,121 +4,122 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?logo=PyTorch&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?logo=python&logoColor=ffdd54)
 
-An AI model that completes partial drawings by predicting the next points in a sequence. Developed as a proof-of-concept by Sen Dewael and Marnick Michielsen from Thomas More University (Geel, Belgium) in collaboration with KMITL (Bangkok, Thailand). 
+An AI system that completes partial or missing drawings by predicting the next points in a sequence.  
+Developed as a proof-of-concept by Sen Dewael and Marnick Michielsen from Thomas More University (Geel, Belgium) in collaboration with KMITL (Bangkok, Thailand).
 
-#### Keep in mind that this AI model is POC which means that the featues are not perfectly worked out and the AI model needs work to create perfect predictions.
+# Project Status 🚧
 
-## Features ✨
+## Circles
+- ✅ Transformer model: fully working — draws complete circles autonomously
+- ⚙️ Other models (LSTM, etc.): functional but need code updates and testing
 
-- 🖌️ Completes partial drawings (circles and capital letters A-E)
-- 📈 LSTM-based neural network for sequential prediction
-- 🧠 Trained on synthetically generated drawing data
-- 📊 Includes data visualization tools
-- 🔄 End-to-end pipeline from data generation to prediction
+## Letters
+- ⚙️ Models available but require more development and fixes
 
-## How It Works 🧠
+> **Note:** This project is a proof-of-concept (POC). Some models or features may be incomplete or experimental.
 
-The system processes drawing sequences through these stages:
+# Folder Structure 📂
 
-1. **Data Generation**: Synthetic training data is created for circles and letters
-2. **Data Processing**: Coordinates are normalized and sequenced
-3. **Model Training**: LSTM network learns drawing patterns
-4. **Prediction**: Model completes partial drawings
-5. **Visualization**: Results can be viewed as plotted drawings
+```bash
+root/
+├── circles/
+│   ├── data/
+│   │   └── generate_full_circles.py
+│   ├── models/
+│   │   ├── lstm/
+│   │   └── transformer_no_input/
+├── letters/
+│   ├── data/
+│   │   └── generate_letter_data.py
+│   ├── models/
+│   │   └── transformer_input/
+└── README.md
+```
 
-## Getting Started 🚀
+# Features ✨
 
-### Installation
+- 🖌️ Complete partial drawings: **circles** and **capital letters A-E**
+- 📚 Multiple model types: **Transformer**, **LSTM**, and others
+- 🧠 Synthetic training data generation scripts
+- 🔄 End-to-end workflow: from data generation to model prediction
 
-1. Clone the repository
-2. Install required packages:
-   - PyTorch
-   - Matplotlib
-   - NumPy
+# How It Works 🧠
 
-### Generating Training Data
+## 1. Data Generation
+Create synthetic training data for circles and letters.
 
-Navigate to the drawings folder and run:
-- `generate_full_circles.py` for circle data
-- `generate_letter_data.py` for letter data (A-E)
+## 2. Model Training
+Train models on the generated datasets (Transformer model for circles currently works best).
 
-### Training the Model
+## 3. Prediction
+Feed a partial drawing or let the model generate full shapes.
 
-Training script:
-- `train.py`
+## 4. Visualization (optional)
+Visualize the generated outputs for evaluation.
 
-Execute the training script which will:
-- Load and preprocess the drawing data
-- Train the LSTM model
-- Save the best performing model
-- Display training progress metrics
+# Getting Started 🚀
 
-### Making Predictions
+## Installation
 
-Prediction script:
-- `predict.py --input <filename> --steps <number of points to predict> --output <output_filename>`
+Clone the repository:
 
-Use the prediction script with:
-- An input JSON file containing partial drawing
-- Number of points to predict
-- Output file name for completed drawing
+```bash
+git clone https://github.com/your-username/drawing-finisher.git
+cd drawing-finisher
+```
 
-### Visualizing Results
+Intall the required packages:
+```bash
+pip install torch matplotlib numpy
 
-Visualizing script:
-- `visualize_drawing.py <filename>`
+```
 
-The visualization tool can display:
-- Original partial drawings
-- Model-completed drawings
-- Comparison between input and output
+## Generating Training Data
 
-## Model Architecture 🏗️
+Navigate to the data folders and run the generation scripts.
 
-| Component       | Specification              |
-|-----------------|----------------------------|
-| Model Type      | LSTM Neural Network        |
-| Input Size      | 2 (x,y coordinates)        |
-| Hidden Size     | 64 units                   |
-| Output Size     | 2 (next x,y prediction)    |
-| Activation      | Sigmoid (output layer)     |
-| Loss Function   | Mean Squared Error         |
-| Optimizer       | Adam                       |
+For circles:
+```bash
+python circles/data/generate_full_circles.py
+```
 
-## Performance Metrics 📊
+For letters:
+```bash
+python letters/data/generate_letter_data.py
+```
 
-Typical training results show:
+## Training Models
 
-| Metric          | Training | Validation |
-|-----------------|----------|------------|
-| Normalized Loss | 0.000123 | 0.000135   |
-| Raw Loss        | 19.7     | 21.6       |
+Training scripts are organized inside each model folder.
 
-## Example Workflow 🔄
+Example: training the Transformer model for circles:
+```bash
+cd circles/models/transformer/
+python train_transformer.py
+```
+> **Note:** Other models (LSTM, etc.) might need code updates to function correctly.
 
-1. Prepare partial drawing as JSON file
-2. Run prediction to generate additional points
-3. Save completed drawing as new JSON
-4. Visualize results to verify quality
+## Making Predictions
 
-## Troubleshooting 🛠️
+Use the prediction scripts provided inside the model folders.
 
-**Common Issues:**
-
-- **Insufficient input points**: Ensure at least 10 coordinate points
-- **Coordinate range**: Input values should be 0-400 scale
-- **File paths**: Use correct relative paths when running scripts
-
+Example: predicting a full circle with the Transformer model:
+```bash
+cd circles/models/transformer/
+python predict_transformer.py
+```
 ## Future Improvements 🔮
 
-- Support for free-form drawings
-- Real-time prediction capabilities
-- Web-based interface
-- Enhanced visualization tools
+    Fully update and test LSTM and other models
+
+    Add real-time drawing completion
+
+    Improve letter prediction accuracy
+
+    Create a web or GUI-based interface
 
 ## Contributors 👥
 
-- **Sen Dewael**
-- **Marnick Michielsen**
+    Sen Dewael
 
-Developed by students of Thomas More University of Applied Sciences, Geel, Belgium in collaboration with KMITL, Bangkok, Thailand.
+    Marnick Michielsen
