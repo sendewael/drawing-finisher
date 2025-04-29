@@ -172,3 +172,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+circles/data/circles_training_data
+letters_data/letters_training_data
