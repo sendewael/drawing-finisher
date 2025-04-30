@@ -64,7 +64,7 @@ Visualize the generated outputs for evaluation.
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/drawing-finisher.git
+git clone https://github.com/sendewael/drawing-finisher.git
 cd drawing-finisher
 ```
 
